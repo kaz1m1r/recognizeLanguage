@@ -1,0 +1,47 @@
+1	fontfile	arialuni.ttf
+2	fontname	Arial Unicode MS
+3	database encoding	utf-8
+4	database communication encoding	utf-8
+5	content encoding	utf-8
+6	browser version	1.0
+7	build release	Medusa-1.4-B774
+8	build date	2011-02-16
+9	build user	teckart
+10	build location	aspra5:/disk1/users/teckart/WSToolchain/tools/Medusa-1.4-B774
+11	build file encoding	UTF-8
+12	build system	Linux on amd64
+13	build architecture model	64
+14	build java version	1.6.0_15
+15	release date	04-MÃ¤rz-2008 10:09 AM
+16	release user	mbuechler
+17	corpus file	/disk1/users/teckart/WSToolchain/workingDir/fra_news_2010_30K/fra_news_2010_30K.txt
+18	used memory	5726666752
+19	WORD_TOKENS	784274
+20	de.uni_leipzig.asv.medusa.filter.sidx.IDXNeighbourhoodFilterImpl.SIG_COOCCURRENCE_TOKENS	413894
+21	de.uni_leipzig.asv.medusa.filter.sidx.IDXNeighbourhoodFilterImpl.SIG_COOCCURRENCE_TYPES	31333
+22	de.uni_leipzig.asv.medusa.filter.sidx.IDXNeighbourhoodFilterImpl.n	754274
+23	de.uni_leipzig.asv.medusa.filter.sidx.IDXSentenceFilterImpl.SIG_COOCCURRENCE_TYPES	105286
+24	de.uni_leipzig.asv.medusa.filter.sidx.IDXInvertedListFilterImpl.n	30000
+25	SENTENCES	30000
+26	de.uni_leipzig.asv.medusa.filter.sidx.IDXSentenceFilterImpl.n	30000
+27	BOW_WORD_TOKENS	706969
+28	de.uni_leipzig.asv.medusa.filter.sidx.IDXSentenceFilterImpl.SIG_COOCCURRENCE_TOKENS	3744832
+29	de.uni_leipzig.asv.medusa.filter.sidx.IDXSentenceFilterImpl.COOCCURRENCE_TYPES	716814
+30	WORD_TYPES	60879
+31	de.uni_leipzig.asv.medusa.filter.sidx.IDXInvertedSourceListFilterImpl.n	30000
+32	de.uni_leipzig.asv.medusa.filter.sidx.IDXNeighbourhoodFilterImpl.COOCCURRENCE_TYPES	37386
+33	auto mwu detection enabled	false
+34	duration of executing de.uni_leipzig.asv.medusa.filter.sidx.IDXSentenceFilterImpl	0 hour(s) 3 min 48,323 sec
+35	duration of exporting de.uni_leipzig.asv.medusa.filter.sidx.IDXSentenceFilterImpl	0 hour(s) 0 min 9,572 sec
+36	duration of word numbers generation	0 hour(s) 0 min 12,795 sec
+37	duration of executing de.uni_leipzig.asv.medusa.filter.sidx.IDXInvertedSourceListFilterImpl	0 hour(s) 0 min 0,33 sec
+38	duration of executing de.uni_leipzig.asv.medusa.filter.sidx.IDXNeighbourhoodFilterImpl	0 hour(s) 3 min 12,401 sec
+39	duration for generation wnc file	0 hour(s) 0 min 0,339 sec
+40	duration of executing de.uni_leipzig.asv.medusa.filter.sidx.IDXInvertedListFilterImpl	0 hour(s) 3 min 18,15 sec
+41	most frequent word	,
+42	duration of generation bow frequencies	0 hour(s) 0 min 1,430 sec
+43	duration of wswn transformation 	0 hour(s) 0 min 1,96 sec
+44	duration of tokenisation	0 hour(s) 0 min 27,772 sec
+45	duration of exporting de.uni_leipzig.asv.medusa.filter.sidx.IDXInvertedListFilterImpl	0 hour(s) 0 min 3,86 sec
+46	most frequent word's frequency	34335
+47	duration of exporting de.uni_leipzig.asv.medusa.filter.sidx.IDXNeighbourhoodFilterImpl	0 hour(s) 0 min 0,383 sec
