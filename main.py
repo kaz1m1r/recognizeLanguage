@@ -88,7 +88,6 @@ if __name__ == "__main__":
         # return a tuple that contains tuples of size n
         return nGrams[n]
 
-
     def count_ngram_occurences(string_to_check: str, language: str, n=2) -> int:
         """
         Function that takes a test string and a path to a .txt file that contains sentences from a specific language.
@@ -115,6 +114,34 @@ if __name__ == "__main__":
         # sentences that belong to a specific language
         return score
 
+    def get_gram_probabilities(string_to_test: str, language: str) -> None:
+        dict_bigram_probabilities: dict[tuple[str], float] = {}
+        dict_trigram_probabilities: dict[tuple[str], float] = {}
+
+        string_to_test_bigrams: tuple[tuple[str]] = tuple_to_ngrams(tuple(sentence_to_list(string_to_test)), 2)
+        string_to_test_trigrams: tuple[tuple[str]] = tuple_to_ngrams(tuple(sentence_to_list(string_to_test)), 3)
+
+        specified_language_bigrams: tuple[tuple[str]] = tuple_to_ngrams(file_to_tuple(dict_paths_to_word_collections[language]), 2)
+        specified_language_trigrams: tuple[tuple[str]] = tuple_to_ngrams(file_to_tuple(dict_paths_to_word_collections[language]), 3)
+
+        specified_language_bigrams_length: int = len(specified_language_bigrams)
+        specified_language_trigrams_length: int = len(specified_language_trigrams)
+
+        # bigrams
+        for bigram in string_to_test_bigrams:
+            nr_of_overlapping_bigrams: int = specified_language_bigrams.count(bigram)
+            dict_bigram_probabilities[bigram] = nr_of_overlapping_bigrams / specified_language_bigrams_length
+
+        # trigrams
+        for trigram in string_to_test_trigrams:
+            nr_of_overlapping_trigrams: int = specified_language_trigrams.count(trigram)
+            dict_trigram_probabilities[trigram] = nr_of_overlapping_trigrams / specified_language_trigrams_length
+
+        # printing bigram probabilities
+        print(f"Bigrams : {dict_bigram_probabilities}")
+        # printing trigram probabilities
+        print(f"Trigrams : {dict_trigram_probabilities}")
+
     def determine_language(string_to_test: str) -> str:
         # initializing the scores that every language
         dict_language_scores: dict[str, int] = {}
@@ -124,7 +151,11 @@ if __name__ == "__main__":
 
         ''' saving language scores to 'dict_language_scores. 
         Using all available cores to speed up the process'''
+
+        # Save language names as strings in a tuple
         languages: tuple[str] = tuple(dict_paths_to_word_collections.keys())
+
+        # using all available cores to calculate the score for a
         with ProcessPoolExecutor() as executor:
             # bi-/trigrams score for the dutch language
             d2: executor[int] = executor.submit(count_ngram_occurences, string_to_test, languages[0], 2)
@@ -160,12 +191,19 @@ if __name__ == "__main__":
             dict_language_scores[languages[5]] = i2.result() + i3.result()
 
         # return the language with the highest store
-        return max(dict_language_scores, key=dict_language_scores.get)
+        language: str = max(dict_language_scores, key=dict_language_scores.get)
+        print(f"Language : {language}")
+        print(f"Bigram and trigram probabilities")
+        get_gram_probabilities(string_to_test, language)
+    '''    
+    test_string: str = "The quick brown fox jumps over the lazy dog"
+    language: str = 'english'
+    determine_language(test_string)
+    '''
 
     while True:
         sentence: str = input("enter sentence >> ")
         if sentence.lower() == 'quit':
             print('bye!')
             break
-        print(determine_language(sentence))
-
+        determine_language(sentence)
